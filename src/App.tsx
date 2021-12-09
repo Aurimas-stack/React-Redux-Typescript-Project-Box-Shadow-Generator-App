@@ -1,58 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import { useAppSelector } from './app/hooks';
 import './App.css';
+import { BoxShadowOptions } from './features/BoxShadowOptions/BoxShadowOptions';
 
-function App() {
+export default function App() {
+  const boxStyleOptions = useAppSelector(state => state.boxShadow);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <div id='item-container'>
+        <BoxShadowOptions />
+        <div id='box'
+        style={
+          boxStyleOptions.inset === false ? 
+          {boxShadow: ` ${boxStyleOptions.rightShift}px ${boxStyleOptions.bottomShift}px 
+          ${boxStyleOptions.blur}px ${boxStyleOptions.spread}px ${boxStyleOptions.color}`} 
+          : {
+            boxShadow: `inset ${boxStyleOptions.rightShift}px ${boxStyleOptions.bottomShift}px 
+          ${boxStyleOptions.blur}px ${boxStyleOptions.spread}px ${boxStyleOptions.color}`
+          }
+        }
+        ></div>
+      </div>
     </div>
   );
 }
-
-export default App;
