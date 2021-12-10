@@ -3,7 +3,7 @@ import BoxShadowReducer from '../features/Box/BoxSlice';
 
 export const store = configureStore({
     reducer: {
-        boxShadow: BoxShadowReducer
+        boxShadow: BoxShadowReducer,
     }
 })
 

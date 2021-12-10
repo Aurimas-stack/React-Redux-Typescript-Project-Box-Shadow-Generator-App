@@ -12,7 +12,10 @@ const initialState: BoxShadowProperties = {
     blur: 7,
     opacity: 1,
     inset: false,
-    color: 'red'
+    color: 'red',
+    borderRadius: 0,
+    width: 250,
+    height: 250
 }
 interface payloadValue {
     value: number;
@@ -23,14 +26,28 @@ export const boxShadowSlice = createSlice({
     initialState,
     reducers: {
         changeShift: (state, action: PayloadAction<payloadValue>) => {
-            Object.keys(state).map(option => {
+            Object.keys(state).forEach(option => {
                 if(option === action.payload.text) {
-                    return state[option] = action.payload.value
+                    state[option] = action.payload.value
                 }
             })
+        },
+        changeInset: (state, action:PayloadAction<boolean>) => {
+            const currAction = action.payload;
+            if(currAction === true) {
+                state.inset = true;
+            } else {
+                state.inset = false;
+            }
+        },
+        resetState: () => {
+            return initialState
+        },
+        changeColour: (state, action: PayloadAction<string>) => {
+            state.color = action.payload;
         }
     }
 })
-export const {changeShift} = boxShadowSlice.actions;
+export const {changeShift, changeInset, resetState, changeColour} = boxShadowSlice.actions;
 export const selectBoxProperties = (state: RootState) => state.boxShadow;
 export default boxShadowSlice.reducer;

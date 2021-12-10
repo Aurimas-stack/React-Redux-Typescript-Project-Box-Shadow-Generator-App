@@ -1,0 +1,16 @@
+.options-output {
+    white-space: pre-wrap;
+}
+.output-container {
+    margin-top: 20px;
+    border:none;
+}
+.output-container > textarea {
+    border:none;
+    border-radius: 5px;
+    padding:5px;
+    font-size: 1rem;
+}
+.output-container > textarea:focus{
+    outline: none !important;
+}
