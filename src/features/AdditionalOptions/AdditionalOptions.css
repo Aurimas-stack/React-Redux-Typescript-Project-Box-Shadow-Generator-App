@@ -7,12 +7,33 @@
     margin-top:40px;
     margin-left: 30px;
 }
+.addopt-container > :nth-child(3) > :first-child {
+    width:120px;
+}
 #color {
     border:none;
     padding:10px;
     letter-spacing: 1px;
     border-radius: 5px;
+    width:60px;
 }
 #color:focus {
     outline: none !important;
+}
+#color-picker {
+    -webkit-appearance: none;
+    border:none;
+    border-radius: 5px;
+    width:80px;
+    height:35px;
+}
+#color-picker:hover {
+    cursor: pointer;
+}
+#color-picker::-webkit-color-swatch-wrapper {
+	padding:0;
+}
+#color-picker::-webkit-color-swatch {
+	border: none;
+    border-radius: 5px;
 }
