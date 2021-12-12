@@ -1,31 +1,14 @@
 import './AdditionalOptions.css';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { changeShift, changeColour} from '../Box/BoxSlice';
-import { useState, useEffect } from 'react';
 
-export const AdditionalOptions = () => {
-    const [color, setColor] = useState('');
-    const dispatch = useAppDispatch();
-    const boxStyleOptions = useAppSelector(state => state.boxShadow);
-    const handleShift = (e: any) => {
-        e.preventDefault();
-        Object.keys(boxStyleOptions).forEach(option => {
-            if(option === e.target.id) {
-                dispatch(changeShift({value: Number(e.target.value), text: option}))
-            }
-        })
-    }
-    useEffect(() => {
-        if(color !== '') {
-            dispatch(changeColour(color))
-        }
-    })
-    /*onst changeColor = (e: any) => {
-        e.preventDefault();
-        if(color !== '') {
-            dispatch(changeColour(color))
-        }
-    } */
+type Props = {
+    color: string,
+    setColor: (val: string) => void,
+    changeColor: (val: any) => void,
+    handleShift: (val: any) => void,
+    boxStyleOptions: any
+} 
+
+export const AdditionalOptions: React.FC<Props> = ({color, setColor, changeColor, handleShift, boxStyleOptions}) => {
     return (
         <div className='addopt-container'>
             <div className='slider-container'>
@@ -44,7 +27,7 @@ export const AdditionalOptions = () => {
                 <p className='slider-name' >Shadow Colour</p>
                 <input  id='color' type='text' value={color === '' ? boxStyleOptions.color : color} readOnly/>
                 <input id='color-picker' type='color' title='Pick Color'
-                value={color === '' ? boxStyleOptions.color : color} onChange={e => setColor(e.target.value)}/>
+                value={color === '' ? boxStyleOptions.color : color} onChange={(e) => {setColor(e.target.value); changeColor(e)}}/>
             </div>
         </div>
     )

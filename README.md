@@ -1,10 +1,13 @@
-**in progress.
+Project done using React Hooks, Redux for state management and Typescript.
 
-So far:
+Main idea of the project: using visual representation get needed output for CSS box-shadow.
 
-User can see these option boxes: #1 Options for box shadow properties, #2 Options for box properties.
-#1 User using sliders can select : 1) Bottom shift. 2) Right shift. 3) Spread. 4) Blur. 5) Inset.
-#1 User can see the output which he can manually copy or can copy it to the clipboard. User can reset options.
-#2 User can select box width & height (size is limited). Also can type in wanted color for box shadow.
-
-All of the changes to the element and its shadow happen in real time.
+- User can see input sliders for these values : 1) Right Shift 2) Bottom Shift 3) Blur 4) Spread 5) Border radius 6) Element width and height.
+- Sliders on page load are pre-selected.
+- Sliders have maximum and minimum values.
+- Sliders display pixel values to the side.
+- User can see inset button for setting shadow inset, he can unset the shadow by pressing the same button.
+- User can reset options, and copy the needed CSS to clipboard by pressing buttons.
+- User can see output of the CSS options which he can manually copy.
+- User can choose colour by using input type="color". Colour is displayed next to the picker and, next to the general output.
+- User can see element ("box") and the element's shadow.

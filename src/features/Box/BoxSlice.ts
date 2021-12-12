@@ -12,7 +12,7 @@ const initialState: BoxShadowProperties = {
     blur: 7,
     opacity: 1,
     inset: false,
-    color: 'red',
+    color: '#ef1510',
     borderRadius: 0,
     width: 250,
     height: 250

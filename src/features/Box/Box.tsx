@@ -1,8 +1,10 @@
 import './Box.css';
-import { useAppSelector } from '../../app/hooks';
 
-export const Box = () => {
-    const boxStyleOptions = useAppSelector(state => state.boxShadow);
+type Props = {
+  boxStyleOptions: any
+}
+
+export const Box: React.FC<Props> = ({boxStyleOptions}) => {
     return (
         <div id='box'
         style={
