@@ -9,5 +9,5 @@ Main idea of the project: using visual representation get needed output for CSS 
 - User can see inset button for setting shadow inset, he can unset the shadow by pressing the same button.
 - User can reset options, and copy the needed CSS to clipboard by pressing buttons.
 - User can see output of the CSS options which he can manually copy.
-- User can choose colour by using input type="color". Colour is displayed next to the picker and, in the general output.
+- User can choose colour by using input type="color". Colour is displayed next to the picker and in the general output.
 - User can see element ("box") and the element's shadow.
